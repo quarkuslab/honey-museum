@@ -1,19 +1,63 @@
-# Setup Assets
+# Next.js Project
 
-This branch is dedicated to setting up and organizing all the assets required for the project. This includes images, fonts, icons, and other static resources.
+Welcome to the Next.js project! This document provides instructions on how to set up and work with the project, including guidelines for working with feature branches and setup branches.
 
-## Purpose
-The purpose of this branch is to ensure that all assets are properly structured and available for use across the project.
+## Table of Contents
 
-## Structure
-- `/src/assets/images`: This directory will contain all images.
-- `/src/assets/icons`: This directory will contain all icons.
-- `/src/assets/fonts`: This directory will contain all font files.
+- [Development Process](#development-process)
+- [Design](#design)
 
-## How to Use
-1. Add all images, fonts, and other static files to their respective directories.
-2. Ensure that the file names are descriptive and follow a consistent naming convention.
-3. Update any relevant paths in the project codebase to reference these assets correctly.
+## Development Process
 
-## Next Steps
-Once the assets are added and organized, create a pull request to merge this branch into `main`. Ensure that all assets are correctly referenced in the project before merging.
+To streamline the development process, follow these steps when working on your assigned feature branch:
+
+1. **Checkout Your Assigned Feature Branch**
+
+   You will be assigned a specific feature branch. To start working on it, checkout the branch:
+
+   ```bash
+   git checkout feature/your-assigned-branch
+   ```
+
+2. **Get the Latest Updates from `main`**
+
+   Before making any changes, ensure your branch is up-to-date with the latest changes from `main`:
+
+   ```bash
+   git fetch origin
+   git merge origin/main
+   ```
+
+3. **Make Changes**
+
+   Implement the required changes or new features according to the task description. Make sure to test your changes locally to ensure everything works as expected.
+
+4. **Commit Your Changes**
+
+   After making and testing your changes, add them to the staging area and commit them with a descriptive message:
+
+   ```bash
+   git add .
+   git commit -m "Describe your changes"
+   ```
+
+5. **Push Your Changes to Remote**
+
+   Push your committed changes to the remote repository:
+
+   ```bash
+   git push origin feature/your-assigned-branch
+   ```
+
+6. **Create a Pull Request**
+
+   Once your changes are pushed, go to the repository on GitHub and create a pull request (PR) from your feature branch to `main`.
+
+   - Ensure that your PR description includes a summary of the changes made.
+   - Request a review from relevant team members.
+   - Wait for the PR to be reviewed and approved before merging it.
+
+## Design
+
+1. **Home Page**
+![homepage](./design/homepage.png)
