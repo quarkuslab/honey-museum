@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Project
 
-## Getting Started
+Welcome to the Next.js project! This document provides instructions on how to set up and work with the project, including guidelines for working with feature branches and setup branches.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Development Process](#development-process)
+- [Design](#design)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development Process
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To streamline the development process, follow these steps when working on your assigned feature branch:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Checkout Your Assigned Feature Branch**
 
-## Learn More
+   You will be assigned a specific feature branch. To start working on it, checkout the branch:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git checkout feature/your-assigned-branch
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Get the Latest Updates from `main`**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   Before making any changes, ensure your branch is up-to-date with the latest changes from `main`:
 
-## Deploy on Vercel
+   ```bash
+   git fetch origin
+   git merge origin/main
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Make Changes**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Implement the required changes or new features according to the task description. Make sure to test your changes locally to ensure everything works as expected.
+
+4. **Commit Your Changes**
+
+   After making and testing your changes, add them to the staging area and commit them with a descriptive message:
+
+   ```bash
+   git add .
+   git commit -m "Describe your changes"
+   ```
+
+5. **Push Your Changes to Remote**
+
+   Push your committed changes to the remote repository:
+
+   ```bash
+   git push origin feature/your-assigned-branch
+   ```
+
+6. **Create a Pull Request**
+
+   Once your changes are pushed, go to the repository on GitHub and create a pull request (PR) from your feature branch to `main`.
+
+   - Ensure that your PR description includes a summary of the changes made.
+   - Request a review from relevant team members.
+   - Wait for the PR to be reviewed and approved before merging it.
+
+## Design
+
+1. **Home Page**
+![homepage](./design/homepage.png)
