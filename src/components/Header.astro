@@ -1,6 +1,13 @@
-<div class="flex gap-20 m-0 capitalize nav-links">
-  <a href="/">Home</a>
-  <a href="/aboutus" >about us</a>
-  <a href="/products" >Products</a>
-  <a href="/contactus" >Contact us</a>
-</div>
+---
+import Nav from "./Nav.astro";
+---
+
+<header class="py-8 xl:py-12 ">
+  <div class=" container mx-auto flex justify-between items-center ">
+    <a href="/">
+      <h1 class="text-white">Vattavada Honey museum</h1>
+    </a>
+    <div class="hidden xl:flex items-center gap-8"></div>
+    <Nav />
+  </div>
+</header>

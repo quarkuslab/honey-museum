@@ -1,47 +1,63 @@
-# Astro Starter Kit: Minimal
+# Next.js Project
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Welcome to the Next.js project! This document provides instructions on how to set up and work with the project, including guidelines for working with feature branches and setup branches.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Table of Contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Development Process](#development-process)
+- [Design](#design)
 
-## 🚀 Project Structure
+## Development Process
 
-Inside of your Astro project, you'll see the following folders and files:
+To streamline the development process, follow these steps when working on your assigned feature branch:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. **Checkout Your Assigned Feature Branch**
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+   You will be assigned a specific feature branch. To start working on it, checkout the branch:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+   ```bash
+   git checkout feature/your-assigned-branch
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. **Get the Latest Updates from `main`**
 
-## 🧞 Commands
+   Before making any changes, ensure your branch is up-to-date with the latest changes from `main`:
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   git fetch origin
+   git merge origin/main
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. **Make Changes**
 
-## 👀 Want to learn more?
+   Implement the required changes or new features according to the task description. Make sure to test your changes locally to ensure everything works as expected.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+4. **Commit Your Changes**
+
+   After making and testing your changes, add them to the staging area and commit them with a descriptive message:
+
+   ```bash
+   git add .
+   git commit -m "Describe your changes"
+   ```
+
+5. **Push Your Changes to Remote**
+
+   Push your committed changes to the remote repository:
+
+   ```bash
+   git push origin feature/your-assigned-branch
+   ```
+
+6. **Create a Pull Request**
+
+   Once your changes are pushed, go to the repository on GitHub and create a pull request (PR) from your feature branch to `main`.
+
+   - Ensure that your PR description includes a summary of the changes made.
+   - Request a review from relevant team members.
+   - Wait for the PR to be reviewed and approved before merging it.
+
+## Design
+
+1. **Home Page**
+![homepage](./design/homepage.png)
