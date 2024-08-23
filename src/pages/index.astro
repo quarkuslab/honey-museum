@@ -2,27 +2,139 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
 import landing from "@/assets/images/landing.png";
+import product from "@/assets/images/product.png";
 ---
 
-<DefaultLayout>
-  <div
-    class="bg-yellow-500 min-h-screen mt-1 text-black flex items-center w-full"
-  >
-    <div class="p-32 max-w-6xl">
-      <h1 class="text-7xl font-sans p-2 leading-tight">
-        Explore the Natural Richness of Idukki at Vattavada Honey Museum
-      </h1>
-      <p class="text-2xl text-black">
-        Your Gateway to Authentic Honey, Chocolates, Spices, and Adventures
-      </p>
-      <button
-        class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent"
+<DefaultLayout title="Home">
+  <main class="overflow-x-hidden">
+    <div class="bg-yellow-500 text-black flex items-center w-full">
+      <div class="p-32 max-w-6xl">
+        <h1 class="text-7xl font-sans p-2 leading-tight">
+          Explore the Natural Richness of Idukki at Vattavada Honey Museum
+        </h1>
+        <p class="text-2xl text-black">
+          Your Gateway to Authentic Honey, Chocolates, Spices, and Adventures
+        </p>
+        <button
+          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent scroll-to"
+        >
+          Know more
+        </button>
+      </div>
+      <div class="w-full h-[50vh] mx-16">
+        <Image
+          src={landing}
+          alt="Honey image"
+          class="object-cover translate-y-36 -translate-x-36 size-auto"
+        />
+      </div>
+    </div>
+
+    <div class="text-black">image</div>
+    <div
+      id="best-sellers"
+      class="bg-white h-96 w-full capitalize flex justify-center items-center text-6xl text-black my-60"
+    >
+      Our Best Sellers
+    </div>
+
+    <div class="flex justify-between my-20 px-16 -translate-y-64">
+      <div
+        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
       >
-        Know more
-      </button>
+        <Image src={product} alt="products" class="transform -translate-y-32" />
+        <div class="mt-4 text-center -translate-y-32">
+          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
+          <p class="text-orange-400 text-lg font-bold">$350</p>
+          <button
+            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <div
+        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
+      >
+        <Image
+          src={product}
+          alt="products"
+          class="object-cover transform -translate-y-32"
+        />
+        <div class="mt-4 text-center transform -translate-y-32">
+          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
+          <p class="text-orange-400 text-lg font-bold">$350</p>
+          <button
+            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <div
+        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
+      >
+        <Image
+          src={product}
+          alt="products"
+          class="object-cover -translate-y-32"
+        />
+        <div class="mt-4 text-center -translate-y-32">
+          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
+          <p class="text-orange-400 text-lg font-bold">$350</p>
+          <button
+            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <div
+        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
+      >
+        <Image
+          src={product}
+          alt="products"
+          class="object-cover -translate-y-32"
+        />
+        <div class="mt-4 text-center -translate-y-32">
+          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
+          <p class="text-orange-400 text-lg font-bold">$350</p>
+          <button
+            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="bg-black w-full h-[50vh]">
-      <Image src={landing} alt="Honey image" />
+    <div class="flex justify-center items-center m-20 -translate-y-64">
+      <a href="/products">
+        <button
+          class="bg-white text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-medium"
+        >
+          View products
+        </button>
+      </a>
     </div>
-  </div></DefaultLayout
->
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll("button.scroll-to");
+
+    if (buttons.length > 0) {
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const bestSellersElement = document.getElementById("best-sellers");
+          if (bestSellersElement) {
+            bestSellersElement.scrollIntoView({ behavior: "smooth" });
+          } else {
+            console.error('Element with ID "best-sellers" not found.');
+          }
+        });
+      });
+    } else {
+      console.error('No buttons with class "scroll-to" found.');
+    }
+  </script>
+</DefaultLayout>
