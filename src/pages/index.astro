@@ -3,6 +3,8 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
 import landing from "@/assets/images/landing.png";
 import product from "@/assets/images/product.png";
+// import FadeSlider from "@/components/FadeSlider.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <DefaultLayout title="Home">
@@ -111,12 +113,15 @@ import product from "@/assets/images/product.png";
     <div class="flex justify-center items-center m-20 -translate-y-64">
       <a href="/products">
         <button
-          class="bg-white text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-medium"
+          class="bg-white text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold"
         >
-          View products
+          View all products
         </button>
       </a>
     </div>
+    <div class="text-black bg-red-600 h-screen"></div>
+    <div class="bg-black text-white h-screen">HI</div>
+    <Footer />
   </main>
 
   <script>
