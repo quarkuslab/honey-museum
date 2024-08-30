@@ -59,5 +59,10 @@ To streamline the development process, follow these steps when working on your a
 
 ## Design
 
-1. **Home Page**
+### Home Page
+
 ![homepage](./design/homepage.png)
+
+### Products Page
+
+![homepage](./design/productspage.jpg)
