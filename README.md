@@ -1,6 +1,6 @@
-# Next.js Project
+# Honey Museum Website
 
-Welcome to the Next.js project! This document provides instructions on how to set up and work with the project, including guidelines for working with feature branches and setup branches.
+This document provides instructions on how to set up and work with the project, including guidelines for working with feature branches and setup branches.
 
 ## Table of Contents
 
