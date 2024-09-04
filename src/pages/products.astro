@@ -1,7 +1,30 @@
 ---
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import landing from "@/assets/images/landing.png";
+import { Image } from "astro:assets";
+import Productprops from "@/components/productprops.astro";
 ---
 
 <DefaultLayout title="products page">
-  <main>products</main>
+  <main class="overflow-x-hidden bg-gray-50">
+    <div class="bg-black text-white flex">
+      <div class="bg-yellow-500 text-black p-32 min-w-fit">
+        <h1 class="text-7xl font-sans p-2 leading-tight">Our products</h1>
+      </div>
+      <div class="bg-yellow-500 w-full flex justify-end">
+        <Image src={landing} alt="honey" class="" />
+      </div>
+    </div>
+    <div class="bg-gray-50 h-44 flex justify-center items-center">
+      For the buttons
+    </div>
+    <div class="bg-green-700">
+      <div class="flex justify-between my-20 px-16 bg-gray-50">
+        <Productprops />
+        <Productprops />
+        <Productprops />
+        <Productprops />
+      </div>
+    </div>
+  </main>
 </DefaultLayout>
