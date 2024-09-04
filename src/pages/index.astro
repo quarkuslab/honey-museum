@@ -45,7 +45,11 @@ import Footer from "@/components/Footer.astro";
       <div
         class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
       >
-        <Image src={product} alt="products" class="transform -translate-y-32" />
+        <Image
+          src={product}
+          alt="products"
+          class="-translate-y-32 duration-300 hover:scale-110"
+        />
         <div class="mt-4 text-center -translate-y-32">
           <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
           <p class="text-orange-400 text-lg font-bold">$350</p>
@@ -62,7 +66,7 @@ import Footer from "@/components/Footer.astro";
         <Image
           src={product}
           alt="products"
-          class="object-cover transform -translate-y-32"
+          class="object-cover transform -translate-y-32 duration-300 hover:scale-110"
         />
         <div class="mt-4 text-center transform -translate-y-32">
           <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
@@ -80,7 +84,7 @@ import Footer from "@/components/Footer.astro";
         <Image
           src={product}
           alt="products"
-          class="object-cover -translate-y-32"
+          class="object-cover -translate-y-32 duration-300 hover:scale-110"
         />
         <div class="mt-4 text-center -translate-y-32">
           <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
@@ -98,7 +102,7 @@ import Footer from "@/components/Footer.astro";
         <Image
           src={product}
           alt="products"
-          class="object-cover -translate-y-32"
+          class="object-cover -translate-y-32 duration-300 hover:scale-110"
         />
         <div class="mt-4 text-center -translate-y-32">
           <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
@@ -120,7 +124,39 @@ import Footer from "@/components/Footer.astro";
         </button>
       </a>
     </div>
-    <div class="text-black bg-red-600 h-screen"></div>
+    <!-- <div class="text-black bg-red-600 h-screen"> -->
+    <div class="">
+      <!-- Slideshow Container -->
+      <div class="overflow-hidden relative">
+        <!-- Slides -->
+        <div
+          class="flex transition-transform duration-50 ease-in-out transform translate-x-0"
+          id="slides"
+        >
+          <img src="image1.jpeg" alt="Slide 1" class="w-full" />
+          <img src="image2.jpeg" alt="Slide 2" class="w-full" />
+          <img src="image3.jpeg" alt="Slide 3" class="w-full" />
+          <img src="image4.jpeg" alt="Slide 3" class="w-full" />
+          <img src="image5.jpeg" alt="Slide 3" class="w-full" />
+          <img src="image6.jpeg" alt="Slide 3" class="w-full" />
+          <img src="image7.jpeg" alt="Slide 3" class="w-full" />
+        </div>
+      </div>
+
+      <!-- Bullet Pagination -->
+      <div class="flex justify-center mt-4 space-x-2">
+        <button
+          class="w-3 h-3 bg-gray-300 rounded-full"
+          onclick="currentSlide(0)"></button>
+        <button
+          class="w-3 h-3 bg-gray-300 rounded-full"
+          onclick="currentSlide(1)"></button>
+        <button
+          class="w-3 h-3 bg-gray-300 rounded-full"
+          onclick="currentSlide(2)"></button>
+      </div>
+    </div>
+    <!-- </div> -->
     <div class="h-32 bg-gray-50"></div>
     <div class="bg-gray-50 h-screen flex justify-end">
       <a
@@ -149,5 +185,47 @@ import Footer from "@/components/Footer.astro";
     } else {
       console.error('No buttons with class "scroll-to" found.');
     }
+
+    let currentIndex = 0;
+
+    function currentSlide(index: number) {
+      const slides = document.getElementById("slides");
+
+      if (!slides) return; // Null check for the slides element
+
+      // Calculate the translateX value based on the index
+      const translateXValue = index * -100;
+
+      // Update the transform style with proper transition duration
+      slides.style.transform = `translateX(${translateXValue}%)`;
+
+      // Update the current index
+      currentIndex = index;
+
+      // Update the pagination bullets
+      updatePagination();
+    }
+
+    function updatePagination() {
+      // Select bullet buttons only inside the specific pagination container
+      const bullets = document.querySelectorAll(
+        ".flex.justify-center.mt-4.space-x-2 button"
+      );
+
+      bullets.forEach((bullet, index) => {
+        bullet.classList.remove("bg-blue-500");
+        bullet.classList.add("bg-gray-300");
+
+        if (index === currentIndex) {
+          bullet.classList.remove("bg-gray-300");
+          bullet.classList.add("bg-blue-500");
+        }
+      });
+    }
+
+    // Initialize the pagination bullets on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      updatePagination();
+    });
   </script>
 </DefaultLayout>
