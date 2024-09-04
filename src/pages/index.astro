@@ -6,6 +6,7 @@ import product from "@/assets/images/product.png";
 import instagram from "@/assets/images/instagram.jpg";
 // import FadeSlider from "@/components/FadeSlider.astro";
 import Footer from "@/components/Footer.astro";
+import Productprops from "@/components/productprops.astro";
 ---
 
 <DefaultLayout title="Home">
@@ -42,78 +43,10 @@ import Footer from "@/components/Footer.astro";
     </div>
 
     <div class="flex justify-between my-20 px-16 -translate-y-64 bg-gray-50">
-      <div
-        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
-      >
-        <Image
-          src={product}
-          alt="products"
-          class="-translate-y-32 duration-300 hover:scale-110"
-        />
-        <div class="mt-4 text-center -translate-y-32">
-          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
-          <p class="text-orange-400 text-lg font-bold">$350</p>
-          <button
-            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
-          >
-            Buy Now
-          </button>
-        </div>
-      </div>
-      <div
-        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
-      >
-        <Image
-          src={product}
-          alt="products"
-          class="object-cover transform -translate-y-32 duration-300 hover:scale-110"
-        />
-        <div class="mt-4 text-center transform -translate-y-32">
-          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
-          <p class="text-orange-400 text-lg font-bold">$350</p>
-          <button
-            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
-          >
-            Buy Now
-          </button>
-        </div>
-      </div>
-      <div
-        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
-      >
-        <Image
-          src={product}
-          alt="products"
-          class="object-cover -translate-y-32 duration-300 hover:scale-110"
-        />
-        <div class="mt-4 text-center -translate-y-32">
-          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
-          <p class="text-orange-400 text-lg font-bold">$350</p>
-          <button
-            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
-          >
-            Buy Now
-          </button>
-        </div>
-      </div>
-      <div
-        class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
-      >
-        <Image
-          src={product}
-          alt="products"
-          class="object-cover -translate-y-32 duration-300 hover:scale-110"
-        />
-        <div class="mt-4 text-center -translate-y-32">
-          <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
-          <p class="text-orange-400 text-lg font-bold">$350</p>
-          <button
-            class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
-          >
-            Buy Now
-          </button>
-        </div>
-      </div>
+      <Productprops />
+      <Productprops />
+      <Productprops />
+      <Productprops />
     </div>
     <div class="flex justify-center items-center m-20 -translate-y-64">
       <a href="/products">

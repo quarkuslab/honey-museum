@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import product from "@/assets/images/product.png";
+---
+
+<div
+  class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
+>
+  <Image
+    src={product}
+    alt="products"
+    class="-translate-y-32 duration-300 hover:scale-110"
+  />
+  <div class="mt-4 text-center -translate-y-32">
+    <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
+    <p class="text-orange-400 text-lg font-bold">$350</p>
+    <button
+      class="mt-2 bg-yellow-800 text-white py-2 p-10 rounded-full hover:bg-orange-500"
+    >
+      Buy Now
+    </button>
+  </div>
+</div>
