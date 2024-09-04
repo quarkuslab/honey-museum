@@ -3,6 +3,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import landing from "@/assets/images/landing.png";
 import { Image } from "astro:assets";
 import Productprops from "@/components/productprops.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <DefaultLayout title="products page">
@@ -12,7 +13,7 @@ import Productprops from "@/components/productprops.astro";
         <h1 class="text-7xl font-sans p-2 leading-tight">Our products</h1>
       </div>
       <div class="bg-yellow-500 w-full flex justify-end">
-        <Image src={landing} alt="honey" class="" />
+        <Image src={landing} alt="honey" />
       </div>
     </div>
     <div class="bg-gray-50 h-20 text-black">For the wave</div>
@@ -28,5 +29,7 @@ import Productprops from "@/components/productprops.astro";
       <Productprops />
       <Productprops />
     </div>
+
+    <Footer /><!--IF needed only add this footer, or else can remove it -->
   </main>
 </DefaultLayout>
