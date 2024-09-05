@@ -1,0 +1,35 @@
+---
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import landing from "@/assets/images/landing.png";
+import { Image } from "astro:assets";
+import Productprops from "@/components/productprops.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<DefaultLayout title="products page">
+  <main class="overflow-x-hidden bg-gray-50">
+    <div class="bg-black text-white flex">
+      <div class="bg-yellow-500 text-black p-32 min-w-fit">
+        <h1 class="text-7xl font-sans p-2 leading-tight">Our products</h1>
+      </div>
+      <div class="bg-yellow-500 w-full flex justify-end">
+        <Image src={landing} alt="honey" />
+      </div>
+    </div>
+    <div class="bg-gray-50 h-20 text-black">For the wave</div>
+    <div class="bg-gray-50 h-44 flex justify-center items-center">
+      For the buttons
+    </div>
+    <div class="bg-gray-50 h-32"></div>
+
+    <!--Adjust the translate settings whenever needed for the product props cuz it can clash with other divs -->
+    <div class="flex justify-between my-20 px-16 bg-gray-50">
+      <Productprops />
+      <Productprops />
+      <Productprops />
+      <Productprops />
+    </div>
+
+    <Footer /><!--IF needed only add this footer, or else can remove it -->
+  </main>
+</DefaultLayout>

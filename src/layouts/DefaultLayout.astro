@@ -1,19 +1,28 @@
 ---
 import Header from "@/components/Header.astro";
+const { title } = Astro.props; //title is extracted from Astro.props and used in the <title> tag.
+import Footer from "@/components/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<slot />
-		</main>
-	</body>
+  <head>
+    <title>
+      {title ? `${title}` : "My Website"}
+    </title><!--{title ? ... : ...}:
+
+    This is a ternary operator, a shorthand for an if-else statement.
+    It checks if title is defined (not null, undefined, or an empty string). If title is defined, it creates a string like "Home",If title is not defined, the code falls back to this default string, meaning the title of the page will simply be "My Website".
+ -->
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title></title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
