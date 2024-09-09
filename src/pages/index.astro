@@ -6,40 +6,50 @@ import instagram from "@/assets/images/instagram.jpg";
 import Footer from "@/components/Footer.astro";
 import Productprops from "@/components/productprops.astro";
 import waves from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/wave .png";
+import bee from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/bee.png";
 ---
 
 <DefaultLayout title="Home">
   <main class="overflow-hidden container mx-auto">
-    <div class="bg-[rgba(255,196,4,0.98)] text-black flex max-h-fit">
+    <div class="bg-[hsla(48,97%,49%)] text-black flex max-h-fit">
       <div class="p-10 bg">
         <h1 class="text-4xl font-medium leading-tight mb-6 w-fit">
           Explore the Natural Richness of Idukki at <br /> Vattavada Honey Museum
         </h1>
-        <p class="text-xl text-black bg- font-light">
+        <p class="text-lg text-black bg- font-normal">
           Your Gateway to Authentic Honey, Chocolates, Spices, and Adventures
         </p>
         <button
-          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent scroll-to"
+          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent scroll-to text hover:"
         >
           Know more
         </button>
       </div>
       <div class="">
-        <Image src={landing} alt="Honey image" class="-mx-10 translate-x-32" />
+        <Image
+          src={landing}
+          alt="Honey image"
+          class="-mx-10 translate-x-32 -translate-y-10"
+        />
       </div>
     </div>
 
     <div class="">
       <Image src={waves} alt="" class="size-full" />
     </div>
-    <div
-      id="best-sellers"
-      class="bg-gray-50 h-96 w-full capitalize flex justify-center items-center text-6xl text-black my-60"
-    >
-      Our Best Sellers
+    <div class="w-screen h-36"></div>
+    <div class="flex justify-center">
+      <div class="">
+        <Image src={bee} alt="bee" class="size-10" />
+      </div>
+      <div
+        class="font-medium w-64 p flex items-center justify-center capitalize text-3xl text-black"
+      >
+        Our best sellers
+      </div>
     </div>
 
-    <div class="flex justify-between my-20 px-16 -translate-y-64 bg-gray-50">
+    <div class="flex justify-between translate-y-44">
       <Productprops />
       <Productprops />
       <Productprops />
@@ -84,8 +94,8 @@ import waves from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/wave .
       </div>
     </div>
 
-    <div class="h-32 bg-gray-50"></div>
-    <div class="bg-gray-50 h-screen flex justify-end">
+    <div class="h-32 bg"></div>
+    <div class="bg h-screen flex justify-end">
       <a
         href="https://www.instagram.com/vattavada_honey_museum_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
         target="_blank"
@@ -94,7 +104,7 @@ import waves from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/wave .
       </a>
     </div>
     <Footer />
-  </main>
+  </main> -->
 
   <script>
     const buttons = document.querySelectorAll("button.scroll-to");
