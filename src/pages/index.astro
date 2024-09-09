@@ -2,21 +2,20 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
 import landing from "@/assets/images/landing.png";
-import product from "@/assets/images/product.png";
 import instagram from "@/assets/images/instagram.jpg";
-// import FadeSlider from "@/components/FadeSlider.astro";
 import Footer from "@/components/Footer.astro";
 import Productprops from "@/components/productprops.astro";
+import waves from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/wave .png";
 ---
 
 <DefaultLayout title="Home">
-  <main class="overflow-hidden bg-gray-50">
-    <div class="bg-yellow-500 text-black flex w-full">
-      <div class="p-32 max-w-6xl">
-        <h1 class="text-7xl font-sans p-2 leading-tight">
-          Explore the Natural Richness of Idukki at Vattavada Honey Museum
+  <main class="overflow-hidden container mx-auto">
+    <div class="bg-[rgba(255,196,4,0.98)] text-black flex max-h-fit">
+      <div class="p-10 bg">
+        <h1 class="text-4xl font-medium leading-tight mb-6 w-fit">
+          Explore the Natural Richness of Idukki at <br /> Vattavada Honey Museum
         </h1>
-        <p class="text-2xl text-black">
+        <p class="text-xl text-black bg- font-light">
           Your Gateway to Authentic Honey, Chocolates, Spices, and Adventures
         </p>
         <button
@@ -26,15 +25,13 @@ import Productprops from "@/components/productprops.astro";
         </button>
       </div>
       <div class="">
-        <Image
-          src={landing}
-          alt="Honey image"
-          class="object-cover translate-y-36 -translate-x-36 size-auto"
-        />
+        <Image src={landing} alt="Honey image" class="-mx-10 translate-x-32" />
       </div>
     </div>
 
-    <div class="text-black">image</div>
+    <div class="">
+      <Image src={waves} alt="" class="size-full" />
+    </div>
     <div
       id="best-sellers"
       class="bg-gray-50 h-96 w-full capitalize flex justify-center items-center text-6xl text-black my-60"
@@ -57,11 +54,9 @@ import Productprops from "@/components/productprops.astro";
         </button>
       </a>
     </div>
-    <!-- <div class="text-black bg-red-600 h-screen"> -->
+
     <div class="">
-      <!-- Slideshow Container -->
       <div class="overflow-hidden relative">
-        <!-- Slides -->
         <div
           class="flex transition-transform duration-50 ease-in-out transform translate-x-0"
           id="slides"
@@ -76,7 +71,6 @@ import Productprops from "@/components/productprops.astro";
         </div>
       </div>
 
-      <!-- Bullet Pagination -->
       <div class="flex justify-center mt-4 space-x-2">
         <button
           class="w-3 h-3 bg-gray-300 rounded-full"
@@ -89,7 +83,7 @@ import Productprops from "@/components/productprops.astro";
           onclick="currentSlide(2)"></button>
       </div>
     </div>
-    <!-- </div> -->
+
     <div class="h-32 bg-gray-50"></div>
     <div class="bg-gray-50 h-screen flex justify-end">
       <a
@@ -119,47 +113,5 @@ import Productprops from "@/components/productprops.astro";
     } else {
       console.error('No buttons with class "scroll-to" found.');
     }
-
-    let currentIndex = 0;
-
-    function currentSlide(index: number) {
-      const slides = document.getElementById("slides");
-
-      if (!slides) return; // Null check for the slides element
-
-      // Calculate the translateX value based on the index
-      const translateXValue = index * -100;
-
-      // Update the transform style with proper transition duration
-      slides.style.transform = `translateX(${translateXValue}%)`;
-
-      // Update the current index
-      currentIndex = index;
-
-      // Update the pagination bullets
-      updatePagination();
-    }
-
-    function updatePagination() {
-      // Select bullet buttons only inside the specific pagination container
-      const bullets = document.querySelectorAll(
-        ".flex.justify-center.mt-4.space-x-2 button"
-      );
-
-      bullets.forEach((bullet, index) => {
-        bullet.classList.remove("bg-blue-500");
-        bullet.classList.add("bg-gray-300");
-
-        if (index === currentIndex) {
-          bullet.classList.remove("bg-gray-300");
-          bullet.classList.add("bg-blue-500");
-        }
-      });
-    }
-
-    // Initialize the pagination bullets on page load
-    document.addEventListener("DOMContentLoaded", () => {
-      updatePagination();
-    });
   </script>
 </DefaultLayout>
