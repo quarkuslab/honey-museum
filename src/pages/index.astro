@@ -20,17 +20,13 @@ import bee from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/bee.png"
           Your Gateway to Authentic Honey, Chocolates, Spices, and Adventures
         </p>
         <button
-          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent scroll-to text hover:"
+          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent scroll-to :"
         >
           Know more
         </button>
       </div>
       <div class="">
-        <Image
-          src={landing}
-          alt="Honey image"
-          class="-mx-10 translate-x-32 -translate-y-10"
-        />
+        <Image src={landing} alt="Honey image" class="-mx-10 hidden sm:block" />
       </div>
     </div>
 
@@ -53,75 +49,73 @@ import bee from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/bee.png"
       <Productprops />
       <Productprops />
       <Productprops />
-      <Productprops />
     </div>
-    <div class="flex justify-center items-center m-20 -translate-y-64">
+    <!-- <div class="bg-blue-400 h w-screen">hi</div> -->
+    <div class="flex justify-center items-center">
       <a href="/products">
         <button
-          class="text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold"
+          class="text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold hover:bg-orange-400"
         >
           View all products
         </button>
       </a>
     </div>
-
-    <div class="">
-      <div class="overflow-hidden relative">
-        <div
-          class="flex transition-transform duration-50 ease-in-out transform translate-x-0"
-          id="slides"
-        >
-          <img src="image1.jpeg" alt="Slide 1" class="w-full" />
-          <img src="image2.jpeg" alt="Slide 2" class="w-full" />
-          <img src="image3.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image4.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image5.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image6.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image7.jpeg" alt="Slide 3" class="w-full" />
+    <!-- 
+      <div class="">
+        <div class="overflow-hidden relative">
+          <div
+            class="flex transition-transform duration-50 ease-in-out transform translate-x-0"
+            id="slides"
+          >
+            <img src="image1.jpeg" alt="Slide 1" class="w-full" />
+            <img src="image2.jpeg" alt="Slide 2" class="w-full" />
+            <img src="image3.jpeg" alt="Slide 3" class="w-full" />
+            <img src="image4.jpeg" alt="Slide 3" class="w-full" />
+            <img src="image5.jpeg" alt="Slide 3" class="w-full" />
+            <img src="image6.jpeg" alt="Slide 3" class="w-full" />
+            <img src="image7.jpeg" alt="Slide 3" class="w-full" />
+          </div>
         </div>
-      </div>
 
-      <div class="flex justify-center mt-4 space-x-2">
-        <button
-          class="w-3 h-3 bg-gray-300 rounded-full"
-          onclick="currentSlide(0)"></button>
-        <button
-          class="w-3 h-3 bg-gray-300 rounded-full"
-          onclick="currentSlide(1)"></button>
-        <button
-          class="w-3 h-3 bg-gray-300 rounded-full"
-          onclick="currentSlide(2)"></button>
-      </div>
-    </div>
+        <div class="flex justify-center mt-4 space-x-2">
+          <button
+            class="w-3 h-3 bg-gray-300 rounded-full"
+            onclick="currentSlide(0)"></button>
+          <button
+            class="w-3 h-3 bg-gray-300 rounded-full"
+            onclick="currentSlide(1)"></button>
+          <button
+            class="w-3 h-3 bg-gray-300 rounded-full"
+            onclick="currentSlide(2)"></button>
+        </div>
+      </div> -->
 
     <div class="h-32 bg"></div>
-    <div class="bg h-screen flex justify-end">
-      <a
-        href="https://www.instagram.com/vattavada_honey_museum_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-        target="_blank"
-      >
-        <Image src={instagram} alt="instagram" class="-translate-y-1" />
-      </a>
-    </div>
-    <Footer />
-  </main> -->
-
-  <script>
-    const buttons = document.querySelectorAll("button.scroll-to");
-
-    if (buttons.length > 0) {
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const bestSellersElement = document.getElementById("best-sellers");
-          if (bestSellersElement) {
-            bestSellersElement.scrollIntoView({ behavior: "smooth" });
-          } else {
-            console.error('Element with ID "best-sellers" not found.');
-          }
-        });
-      });
-    } else {
-      console.error('No buttons with class "scroll-to" found.');
-    }
-  </script>
+    <a
+      href="https://www.instagram.com/vattavada_honey_museum_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      target="_blank"
+    >
+      <Image src={instagram} alt="instagram" class="-translate-y-1" />
+    </a>
+  </main>
+  <Footer />
 </DefaultLayout>
+
+<script>
+  const buttons = document.querySelectorAll("button.scroll-to");
+
+  if (buttons.length > 0) {
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const bestSellersElement = document.getElementById("best-sellers");
+        if (bestSellersElement) {
+          bestSellersElement.scrollIntoView({ behavior: "smooth" });
+        } else {
+          console.error('Element with ID "best-sellers" not found.');
+        }
+      });
+    });
+  } else {
+    console.error('No buttons with class "scroll-to" found.');
+  }
+</script>

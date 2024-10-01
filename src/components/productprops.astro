@@ -3,15 +3,13 @@ import { Image } from "astro:assets";
 import product from "@/assets/images/product.png";
 ---
 
-<div
-  class="bg-gray-100 border border-transparent rounded-tl-3xl rounded-tr-3xl"
->
+<div class="bg-gray-100 border border-transparent rounded-3xl mb-56">
   <Image
     src={product}
     alt="products"
     class="-translate-y-32 duration-300 hover:scale-105"
   />
-  <div class="mt-4 text-center -translate-y-32">
+  <div class="mt-4 text-center -translate-y-28">
     <h3 class="text-xl font-semibold text-black">Fresh Honey</h3>
     <p class="text-orange-400 text-lg font-bold">$350</p>
     <button
