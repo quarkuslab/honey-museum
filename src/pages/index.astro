@@ -6,6 +6,7 @@ import instagram from "@/assets/images/instagram.jpg";
 import Footer from "@/components/Footer.astro";
 import Productprops from "@/components/productprops.astro";
 import waves from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/wave .png";
+import Viewbutton from "@/components/Viewbutton.astro";
 import bee from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/bee.png";
 ---
 
@@ -33,7 +34,9 @@ import bee from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/bee.png"
     <div class="">
       <Image src={waves} alt="" class="size-full" />
     </div>
+
     <div class="w-screen h-36"></div>
+
     <div class="flex justify-center">
       <div class="">
         <Image src={bee} alt="bee" class="size-10" />
@@ -45,21 +48,25 @@ import bee from "/home/ubuntu/Desktop/quarkus-works/honey-museum/public/bee.png"
       </div>
     </div>
 
-    <div class="flex justify-between translate-y-44">
+    <div class="flex justify-between relative translate-y-44 z-10">
       <Productprops />
       <Productprops />
       <Productprops />
     </div>
-    <!-- <div class="bg-blue-400 h w-screen">hi</div> -->
-    <div class="flex justify-center items-center">
-      <a href="/products">
+
+    <!-- Wrap the button inside a div with a higher z-index and relative position -->
+    <div
+      class="w-screen flex justify-center z-30 relative mt-16 bg -translate-x-80"
+    >
+      <a href="products">
         <button
-          class="text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold hover:bg-orange-400"
+          class="text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold hover:bg-orange-300"
         >
           View all products
         </button>
       </a>
     </div>
+
     <!-- 
       <div class="">
         <div class="overflow-hidden relative">

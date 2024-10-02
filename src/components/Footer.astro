@@ -2,45 +2,50 @@
 import { Image } from "astro:assets";
 import landing from "@/assets/images/landing.png";
 import product from "@/assets/images/product.png";
+import favicon from "public/favicon.svg";
 ---
 
-<div class="">
-  <div class="bg- h-96 flex justify-between">
-    <h1
-      class="text-orange-400 capitalize text-8xl font-medium min-w-fit mx-4 flex items-end p-10 justify-center bg"
-    >
-      Visit us
-    </h1>
-    <div
-      class="bg- w-full flex items-center justify-center text-orange-400 text-xl font-medium translate-x-96 h-40 m-40"
-    >
-      <h1>Maps Location</h1>
-      <Image
-        src={product}
-        alt="products"
-        class="translate-y-60 -translate-x-40"
-      />
+<main class="container mx-auto">
+  <div class="">
+    <div class="bg- h-96 flex justify-between">
+      <h1
+        class="text-orange-400 capitalize text-8xl font-medium min-w-fit mx-4 flex items-end p-10 justify-center bg"
+      >
+        Visit us
+      </h1>
+      <!-- <div
+        class="bg- w-full flex items-center justify-center text-orange-400 text-xl font-medium translate-x-96 h-40 m-40"
+      >
+        <h1>Maps Location</h1>
+        <Image
+          src={product}
+          alt="products"
+          class="translate-y-60 -translate-x-40"
+        />
+      </div> -->
+    </div>
+    <div class="bg-[hsla(48,97%,49%)] flex justify-center p-4 rounded-t-lg">
+    </div>
+    <div class="bg-[hsla(48,97%,49%)] p-4 flex justify-center">
+      <a href="/"> <Image src={favicon} alt="logo" class="size-10" /></a>
+    </div>
+    <div class="flex text-xl justify-center">
+      <div
+        class="text-black w-screen p-8 h-full bottom-10 gap-14 flex justify-center items-start bg-[hsla(48,97%,49%)] capitalize text-base font-"
+      >
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/aboutus" class="hover:underline">about us</a>
+        <a href="/products" class="hover:underline">Products</a>
+        <a href="/contactus" class="hover:underline">Contact us</a>
+      </div>
+    </div>
+    <div class="bg-[hsla(48,97%,49%)] h-20">
+      <hr class="mx-32 border-black" />
+      <h1
+        class="flex items-center justify-center capitalize translate-y-10 bg-"
+      >
+        &copy; 2024 quarkus
+      </h1>
     </div>
   </div>
-  <div class="bg-yellow-500 flex justify-center mx-10 p-4">
-    <a href="/">
-      <h1 class="text-white">Vattavada Honey museum</h1>
-    </a>
-  </div>
-  <div class="flex text-xl justify-center mx-10">
-    <div
-      class="text-black w-screen p-4 h-full bottom-10 gap-14 flex justify-center items-start bg-yellow-500 capitalize text-lg"
-    >
-      <a href="/" class="hover:underline">Home</a>
-      <a href="/aboutus" class="hover:underline">about us</a>
-      <a href="/products" class="hover:underline">Products</a>
-      <a href="/contactus" class="hover:underline">Contact us</a>
-    </div>
-  </div>
-  <div class="bg-yellow-500 mx-10 h-40 p-4">
-    <hr class="w-full border-black mx-32 -translate-x-32" />
-    <h1 class="flex items-center justify-center capitalize translate-y-10">
-      &copy; Copyright quarkus
-    </h1>
-  </div>
-</div>
+</main>
