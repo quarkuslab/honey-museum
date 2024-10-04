@@ -12,7 +12,6 @@ import Slideshow from "@/components/Slideshow.astro";
 
 <DefaultLayout title="Home">
   <main class="overflow-hidden container mx-auto">
-    <!-- Header Section -->
     <div class="bg-[hsla(48,97%,49%)] text-black flex max-h-fit">
       <div class="p-10">
         <h1 class="text-4xl font-medium leading-tight mb-6 w-fit">
@@ -32,12 +31,10 @@ import Slideshow from "@/components/Slideshow.astro";
       </div>
     </div>
 
-    <!-- Waves Image -->
     <div>
       <Image src={waves} alt="" class="w-full" />
     </div>
 
-    <!-- Bee and Title Section -->
     <div class="flex justify-center items-center space-x-4 py-8">
       <Image src={bee} alt="bee" class="w-20 h-20" />
       <div class="font-medium text-3xl text-black capitalize">
@@ -45,14 +42,12 @@ import Slideshow from "@/components/Slideshow.astro";
       </div>
     </div>
 
-    <!-- Products Section -->
     <div class="flex justify-between relative translate-y-44 z-10">
       <Productprops />
       <Productprops />
       <Productprops />
     </div>
 
-    <!-- View All Products Button -->
     <div class="w-screen flex justify-center z-30 relative">
       <a href="products">
         <button
@@ -82,27 +77,23 @@ import Slideshow from "@/components/Slideshow.astro";
     const slideCount = slideElements.length;
     let index = 0;
 
-    // Function to update the position of the slides
     function updateSlidePosition() {
       const slideWidth = slideElements[0]?.offsetWidth ?? 0;
       if (slides) {
-        // Ensure slides is not null
         slides.style.transform = `translateX(-${index * slideWidth}px)`;
       }
     }
 
-    // Event listeners for manual slide clicking
     slideElements.forEach((slide, idx) => {
       slide.addEventListener("click", () => {
-        index = idx; // Update index based on clicked slide
-        updateSlidePosition(); // Update slide position
+        index = idx;
+        updateSlidePosition();
       });
     });
 
-    // Optional: Auto-slide functionality (remove if not needed)
     setInterval(() => {
-      index = (index + 1) % slideCount; // Move to the next slide
-      updateSlidePosition(); // Update slide position
-    }, 3000); // Slide every 3 seconds
+      index = (index + 1) % slideCount;
+      updateSlidePosition();
+    }, 3000);
   });
 </script>
