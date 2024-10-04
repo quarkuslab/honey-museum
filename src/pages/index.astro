@@ -85,7 +85,10 @@ import Slideshow from "@/components/Slideshow.astro";
     // Function to update the position of the slides
     function updateSlidePosition() {
       const slideWidth = slideElements[0]?.offsetWidth ?? 0;
-      slides.style.transform = `translateX(-${index * slideWidth}px)`;
+      if (slides) {
+        // Ensure slides is not null
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
     }
 
     // Event listeners for manual slide clicking
