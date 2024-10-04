@@ -2,164 +2,98 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import { Image } from "astro:assets";
 import landing from "@/assets/images/landing.png";
-import product from "@/assets/images/product.png";
-import instagram from "@/assets/images/instagram.jpg";
-// import FadeSlider from "@/components/FadeSlider.astro";
+import Instagram from "@/components/Instagram.astro";
 import Footer from "@/components/Footer.astro";
 import Productprops from "@/components/productprops.astro";
+import waves from "@/assets/images/wave.png";
+import bee from "@/assets/images/bee.png";
+import Slideshow from "@/components/Slideshow.astro";
 ---
 
 <DefaultLayout title="Home">
-  <main class="overflow-hidden bg-gray-50">
-    <div class="bg-yellow-500 text-black flex w-full">
-      <div class="p-32 max-w-6xl">
-        <h1 class="text-7xl font-sans p-2 leading-tight">
-          Explore the Natural Richness of Idukki at Vattavada Honey Museum
+  <main class="overflow-hidden container mx-auto">
+    <div class="bg-[hsla(48,97%,49%)] text-black flex max-h-fit">
+      <div class="p-10">
+        <h1 class="text-4xl font-medium leading-tight mb-6 w-fit">
+          Explore the Natural Richness of Idukki at <br /> Vattavada Honey Museum
         </h1>
-        <p class="text-2xl text-black">
+        <p class="text-lg text-black">
           Your Gateway to Authentic Honey, Chocolates, Spices, and Adventures
         </p>
         <button
-          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border rounded-full border-transparent scroll-to"
+          class="mt-7 bg-orange-400 text-gray-50 px-8 py-1 border-transparent rounded-full scroll-to"
         >
           Know more
         </button>
       </div>
-      <div class="">
-        <Image
-          src={landing}
-          alt="Honey image"
-          class="object-cover translate-y-36 -translate-x-36 size-auto"
-        />
+      <div>
+        <Image src={landing} alt="Honey image" class="-mx-10 hidden sm:block" />
       </div>
     </div>
 
-    <div class="text-black">image</div>
-    <div
-      id="best-sellers"
-      class="bg-gray-50 h-96 w-full capitalize flex justify-center items-center text-6xl text-black my-60"
-    >
-      Our Best Sellers
+    <div>
+      <Image src={waves} alt="" class="w-full" />
     </div>
 
-    <div class="flex justify-between my-20 px-16 -translate-y-64 bg-gray-50">
-      <Productprops />
+    <div class="flex justify-center items-center space-x-4 py-8">
+      <Image src={bee} alt="bee" class="w-20 h-20" />
+      <div class="font-medium text-3xl text-black capitalize">
+        Our best sellers
+      </div>
+    </div>
+
+    <div class="flex justify-between relative translate-y-44 z-10">
       <Productprops />
       <Productprops />
       <Productprops />
     </div>
-    <div class="flex justify-center items-center m-20 -translate-y-64">
-      <a href="/products">
+
+    <div class="w-screen flex justify-center z-30 relative">
+      <a href="products">
         <button
-          class="text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold"
+          class="text-orange-400 border-2 rounded-full border-orange-400 py-3 px-12 font-semibold hover:bg-orange-300 -translate-x-80"
         >
           View all products
         </button>
       </a>
     </div>
-    <!-- <div class="text-black bg-red-600 h-screen"> -->
-    <div class="">
-      <!-- Slideshow Container -->
-      <div class="overflow-hidden relative">
-        <!-- Slides -->
-        <div
-          class="flex transition-transform duration-50 ease-in-out transform translate-x-0"
-          id="slides"
-        >
-          <img src="image1.jpeg" alt="Slide 1" class="w-full" />
-          <img src="image2.jpeg" alt="Slide 2" class="w-full" />
-          <img src="image3.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image4.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image5.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image6.jpeg" alt="Slide 3" class="w-full" />
-          <img src="image7.jpeg" alt="Slide 3" class="w-full" />
-        </div>
-      </div>
-
-      <!-- Bullet Pagination -->
-      <div class="flex justify-center mt-4 space-x-2">
-        <button
-          class="w-3 h-3 bg-gray-300 rounded-full"
-          onclick="currentSlide(0)"></button>
-        <button
-          class="w-3 h-3 bg-gray-300 rounded-full"
-          onclick="currentSlide(1)"></button>
-        <button
-          class="w-3 h-3 bg-gray-300 rounded-full"
-          onclick="currentSlide(2)"></button>
-      </div>
-    </div>
-    <!-- </div> -->
-    <div class="h-32 bg-gray-50"></div>
-    <div class="bg-gray-50 h-screen flex justify-end">
-      <a
-        href="https://www.instagram.com/vattavada_honey_museum_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-        target="_blank"
-      >
-        <Image src={instagram} alt="instagram" class="-translate-y-1" />
-      </a>
-    </div>
+    <div class="p-16"></div>
+    <Slideshow />
+    <Instagram />
     <Footer />
   </main>
-
-  <script>
-    const buttons = document.querySelectorAll("button.scroll-to");
-
-    if (buttons.length > 0) {
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const bestSellersElement = document.getElementById("best-sellers");
-          if (bestSellersElement) {
-            bestSellersElement.scrollIntoView({ behavior: "smooth" });
-          } else {
-            console.error('Element with ID "best-sellers" not found.');
-          }
-        });
-      });
-    } else {
-      console.error('No buttons with class "scroll-to" found.');
-    }
-
-    let currentIndex = 0;
-
-    function currentSlide(index: number) {
-      const slides = document.getElementById("slides");
-
-      if (!slides) return; // Null check for the slides element
-
-      // Calculate the translateX value based on the index
-      const translateXValue = index * -100;
-
-      // Update the transform style with proper transition duration
-      slides.style.transform = `translateX(${translateXValue}%)`;
-
-      // Update the current index
-      currentIndex = index;
-
-      // Update the pagination bullets
-      updatePagination();
-    }
-
-    function updatePagination() {
-      // Select bullet buttons only inside the specific pagination container
-      const bullets = document.querySelectorAll(
-        ".flex.justify-center.mt-4.space-x-2 button"
-      );
-
-      bullets.forEach((bullet, index) => {
-        bullet.classList.remove("bg-blue-500");
-        bullet.classList.add("bg-gray-300");
-
-        if (index === currentIndex) {
-          bullet.classList.remove("bg-gray-300");
-          bullet.classList.add("bg-blue-500");
-        }
-      });
-    }
-
-    // Initialize the pagination bullets on page load
-    document.addEventListener("DOMContentLoaded", () => {
-      updatePagination();
-    });
-  </script>
 </DefaultLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector("#slides") as HTMLDivElement | null;
+
+    if (!slides) {
+      console.error("Carousel elements not found");
+      return;
+    }
+
+    const slideElements = Array.from(slides.children) as HTMLElement[];
+    const slideCount = slideElements.length;
+    let index = 0;
+
+    function updateSlidePosition() {
+      const slideWidth = slideElements[0]?.offsetWidth ?? 0;
+      if (slides) {
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+    }
+
+    slideElements.forEach((slide, idx) => {
+      slide.addEventListener("click", () => {
+        index = idx;
+        updateSlidePosition();
+      });
+    });
+
+    setInterval(() => {
+      index = (index + 1) % slideCount;
+      updateSlidePosition();
+    }, 3000);
+  });
+</script>

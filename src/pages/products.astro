@@ -4,19 +4,22 @@ import landing from "@/assets/images/landing.png";
 import { Image } from "astro:assets";
 import Productprops from "@/components/productprops.astro";
 import Footer from "@/components/Footer.astro";
+import waves from "@/assets/images/wave.png";
 ---
 
 <DefaultLayout title="products page">
-  <main class="overflow-x-hidden bg-gray-50">
+  <main class="overflow-hidden container mx-auto bg-gray-50">
     <div class="bg-black text-white flex">
-      <div class="bg-yellow-500 text-black p-32 min-w-fit">
+      <div class="bg-[hsla(48,97%,49%)] text-black p-32 min-w-fit">
         <h1 class="text-7xl font-sans p-2 leading-tight">Our products</h1>
       </div>
-      <div class="bg-yellow-500 w-full flex justify-end">
+      <div class="bg-[hsla(48,97%,49%)] w-full flex justify-end">
         <Image src={landing} alt="honey" /><!--Change the image -->
       </div>
     </div>
-    <div class="bg-gray-50 h-20 text-black">For the wave</div>
+    <div class="">
+      <Image src={waves} alt="" class="size-full" />
+    </div>
     <div class="bg-gray-50 h-44 flex justify-center items-center">
       For the buttons
     </div>
